@@ -16,11 +16,16 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgb(251, 249, 249);
 }
 
 a,p{
     font-weight: bold;
     color: black;
+}
+
+a:hover{
+    cursor: pointer;
 }
 
 /* Header */
@@ -76,13 +81,25 @@ header{
     align-items: flex-end;
 }
 
+.nav a{
+    transition:0.2s;
+}
+
+.nav a:hover{
+    text-decoration: underline;
+}
+
 /* main */
 
 .main{
     width: 100%;
-    background-color: grey;
+    background-color: rgb(251, 249, 249);
     margin: auto;
     margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* page header */
@@ -98,6 +115,22 @@ header{
     justify-content: center;
     
 }
+
+/* header page qui suis je */
+
+.header-main-2{
+    width: 100%;
+    height: calc(70vh - 100px);
+    background-image: url('../assets/img/images/conseillere-droit.webp');
+    background-size:cover;
+    background-repeat: no-repeat;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+    
+}
+
+/* ------------------------------- */
 
 .mask-header{
     width: 100%;
@@ -148,6 +181,69 @@ header{
     text-align: center;
     font-weight: bold;
 }
+
+/* bloc biographie page qui suis je */
+
+.bio{
+    width: 100%;
+    height: 1000px;
+    display: flex;
+}
+
+.biography, .illustration{
+    width: 50%;
+    height: 100%;
+}
+
+.biography{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #e1d8d3;
+}
+
+.biography p{
+    width: 80%;
+}
+
+.illustration{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bloc-image-bio, .contact-bio{
+    height: 50%;
+}
+
+.bloc-image-bio{
+    width: 100%;
+    height: 50%;
+    background-image: url('../assets/img/images/droit-juriste.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.contact-bio{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--light-color);
+}
+
+.contact-bio h3{
+    text-align: center;
+    font-size: 30px;
+    width: 80%;
+}
+
+/* ----------------------------------- */
 
 /* bloc contenu 1 */
 
@@ -222,11 +318,11 @@ header{
 
 .bloc-contenu-2{
     background-color: var(--light-color);
+    margin-bottom: 50px;
 }
 /* footer */
 
 footer{
-    margin-top: 50px;
     background-color: var(--light-color);
     width: 100%;
     height:250px;
@@ -410,6 +506,10 @@ footer ul{
     .icons-bloc p{
         font-size: 12px;   
     }
+
+    .contact-bio h3{
+        font-size: 25px;
+    }
 }
 
 @media screen and (max-width : 450px){
@@ -459,6 +559,24 @@ footer ul{
         order: 0;
     }
 
+    .bio{
+        flex-direction: column;
+        height: 1250px;
+    }
+
+    .biography{
+        width: 100%;
+        height: 70%;
+    }
+
+    .illustration{
+        width: 100%;
+        height: 30%;
+    }
+
+    .illustration h3{
+        font-size: 18px;
+    }
 
     footer{
         height: 400px;
@@ -510,6 +628,48 @@ footer ul{
 @media screen and (max-width : 260px){
     .bloc-contenu{
         height: 100vh;
+    }
+
+    .bio{
+        flex-direction: column;
+        height: 1500px;
+    }
+
+    .biography p{
+        font-size: 10px;
+    }
+
+    .illustration h3{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width : 156px){
+    .bio{
+        height: 3000px;
+    }
+
+
+    .bloc-image-bio{
+        display: none;
+    }
+
+    .biography{
+        height: 90%;
+    }
+
+    .illustration{
+        height: 10%;
+    }
+
+    .illustration h3{
+        display: none;
+    }
+
+    .illustration input{
+        width: 95%;
+        height: 30px;
+        font-size: 9px;
     }
 }
 
