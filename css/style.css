@@ -1,0 +1,502 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+/* generic rules */
+
+body, body *{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    --light-color:#EAD1C0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a,p{
+    font-weight: bold;
+    color: black;
+}
+
+/* Header */
+
+header{
+    background-color: var(--light-color);
+    width: 100%;
+    height: 100px;
+    box-shadow: 0px 2px 2px 0px rgb(132, 132, 132);
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.main-header{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo img{
+    width: 50%;
+}
+
+.en-tete{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+.nav{
+    width: 15%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* main */
+
+.main{
+    width: 100%;
+    background-color: grey;
+    margin: auto;
+    margin-top: 100px;
+}
+
+/* page header */
+
+.header-main{
+    width: 100%;
+    height: calc(70vh - 100px);
+    background-image: url('../assets/img/images/juriste-Paris.webp');
+    background-size:cover;
+    background-repeat: no-repeat;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.mask-header{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.584);
+}
+
+.header-title{
+    color: white;
+    width: 600px;
+    height: auto;
+    height: auto;
+    font-size: 50px;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top:250px;
+}
+
+/* icon bloc */
+
+.icons-bloc {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 350px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.icons-bloc > div{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 100px;
+}
+
+.icons-bloc i{
+    color: black;
+    font-size: 100px;
+}
+
+.icons-bloc p{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* bloc contenu 1 */
+
+.bloc-contenu{
+    width: 80%;
+    height: 500px;
+    box-shadow: 2px 4px 4px 4px rgb(132, 132, 132);
+    margin-bottom: 50px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.img-zone-1{
+    background-image: url('../assets/img/images/juriste-conseils.webp');
+}
+
+.img-zone-2{
+    background-image: url('../assets/img/images/expertise-loi.webp');
+}
+
+.img-zone{
+    width: 45%;
+    background-size: cover;
+    background-position: center;
+}
+
+.text-zone{
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-zone-container{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-zone-container h3{
+    width: 100%;
+    font-size: 22px;
+}
+
+.text-zone p{
+    width: 100%;
+}
+
+.dark-button{
+    background-color: var(--light-color);
+    width: 150px;
+    height: 35px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.light-button{
+    background-color:white;
+    width: 150px;
+    height: 35px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.bloc-contenu-2{
+    background-color: var(--light-color);
+}
+/* footer */
+
+footer{
+    margin-top: 50px;
+    background-color: var(--light-color);
+    width: 100%;
+    height:250px;
+    box-shadow: 2px 0px 0px 2px rgb(132, 132, 132);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+footer ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main-footer{
+    width: 80%;
+    height:50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.adress{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 30%;
+    height: 100%;
+}
+
+.adress li{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.nav-footer{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-footer a{
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.social{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.social i{
+    font-size: 30px;
+    margin-right: 10px;
+    font-weight: lighter;
+}
+
+/* media queries */
+
+@media screen and (min-width : 1300px){
+    .logo img{
+        width: 86.44px;
+    }
+    .header-title{
+        top:300px;
+    }
+}
+
+@media screen and (max-width : 1557px){
+    .header-main{
+        background-position: center;
+        /* height: auto; */
+    }
+
+}
+
+@media screen and (max-width : 1000px) {
+
+    .icons-bloc i {
+        font-size: 60px;
+    }
+
+    .bloc-contenu{
+        height: 600px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-zone{
+        width: 100%;
+        height: 50%;
+        order: 1;
+    }
+
+    .img-zone{
+        width: 100%;
+        height: 50%;
+        order: 0;
+    }
+    
+}
+
+@media screen and (max-width : 750px){
+
+    .en-tete{
+        width: 40%;
+    }
+
+    h1{
+        text-align: center;
+        font-size: 25px;
+    }
+    .main-header{
+        width: 90%;
+    }
+
+    .logo{
+
+        width: 30%;
+    }
+
+    .logo img{
+        width: 80px;
+    }
+
+    a,li,p{
+        font-size: 12px;
+    }
+
+    .header-title{
+        font-size: 25px;
+        width: 70%;
+    }
+
+    .nav{
+        width: 30%;
+    }
+
+    .icons-bloc{
+        height: 200px;
+    }
+
+    .icons-bloc p{
+        font-size: 12px;   
+    }
+}
+
+@media screen and (max-width : 450px){
+    .logo img{
+        width: 50px;
+    }
+    
+    .en-tete p{
+        display: none;
+    }
+
+    h1{
+        display: none;
+    }
+
+    .icons-bloc{
+        width: 100%;
+        height: 600px;
+        flex-direction: column;
+    }
+
+    .icons-bloc i{
+        font-size: 40px;
+    }
+
+    .icons-bloc p{
+        font-size: 12px;   
+    }
+
+    .bloc-contenu{
+        width: 100%;
+        border-radius: 0px;
+        height: 800px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-zone{
+        width: 100%;
+        height: 50%;
+        order: 1;
+    }
+
+    .img-zone{
+        width: 100%;
+        height: 50%;
+        order: 0;
+    }
+
+
+    footer{
+        height: 400px;
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+    }
+
+    .main-footer{
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 90%;
+        text-align: center;
+    } 
+
+    .main-footer > *{
+        width: 100%;
+    }
+
+    .main-footer div ul{
+        
+        width: 100%;
+        
+    }
+
+    .main-footer div ul li, .main-footer div > a{
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-footer{
+        order:0;
+    }
+
+    .adress{
+        order: 1;
+    }
+
+    .social{
+        align-items: center;
+        justify-content: center;
+        order: 2;
+    }
+}
+
+@media screen and (max-width : 260px){
+    .bloc-contenu{
+        height: 100vh;
+    }
+}
+
+@media screen and (max-height : 850px){
+    .header-main h2{
+        top:35%;
+    }
+}
