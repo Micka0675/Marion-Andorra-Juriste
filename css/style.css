@@ -674,7 +674,7 @@ footer ul{
 }
 
 @media screen and (max-height : 850px){
-    .header-main h2{
+    .header-main h2, .header-main-2 h2{
         top:35%;
     }
 }
