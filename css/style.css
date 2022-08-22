@@ -17,6 +17,7 @@ body{
     justify-content: center;
     align-items: center;
     background-color: rgb(251, 249, 249);
+    scroll-behavior: smooth;
 }
 
 a,p{
@@ -131,6 +132,99 @@ header{
 }
 
 /* ------------------------------- */
+
+/* header page contact */
+
+.header-main-3{
+    width: 100%;
+    height: calc(70vh - 100px);
+    background-image: url('../assets/img/images/contact.webp');
+    background-size:cover;
+    background-repeat: no-repeat;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+    
+}
+
+/* ------------------------------- */
+
+/* formulaire page contact */
+
+.form-header{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+
+.form-header p{
+    width: 50%;
+}
+
+.form-container{
+    width: 100%;
+    height:500px;
+    background-color: var(--light-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 50%;
+    max-width: 724px;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.champ input{
+    width: 150px;
+    height: 20px;
+}
+
+.champ{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 45%;
+    height: 50px;
+}
+
+.telephone{
+    width: 45%;
+}
+
+.demande{
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 250px;
+}
+
+.demande textarea{
+    width: 100% ;
+}
+
+form input{
+    width: 100px;
+}
+
+.sub{
+    margin: auto;
+}
+
+/* ------------------------- */
 
 .mask-header{
     width: 100%;
@@ -460,6 +554,31 @@ footer ul{
         height: 50%;
         order: 0;
     }
+
+    .form-container{
+        width: 100%;
+        height: 700px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    form{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 90%;
+        max-width: 712.57px;
+        height: 100%;
+        justify-content: space-evenly;
+    }
+
+    .champ{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .sub{
+        margin: 0;
+    }
     
 }
 
@@ -545,6 +664,11 @@ footer ul{
         height: 800px;
         flex-direction: column;
         align-items: center;
+        box-shadow: none;
+    }
+
+    .bloc-contenu-2{
+        margin-bottom: 0;
     }
 
     .text-zone{
@@ -578,8 +702,23 @@ footer ul{
         font-size: 18px;
     }
 
-    footer{
+    .form-header{
         height: 400px;
+    }
+
+    .form-header h2{
+        font-size: 20px;
+    }
+
+    .form-header p{
+        width: 80%;
+    }
+
+    footer{
+        box-shadow: none;
+        border-top: 1px solid black;
+        height: 400px;
+        padding-top: 50px;
         /* display: flex;
         justify-content: center;
         align-items: center; */
