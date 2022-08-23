@@ -42,6 +42,7 @@ input{
 
 form input:hover{
     background-color: #f6f3f2;
+    border: solid black 2px;
 }
 
 input:hover , .sub:hover{
