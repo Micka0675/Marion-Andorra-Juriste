@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 /* generic rules */
 
 html, body{
@@ -11,7 +11,7 @@ body, body *{
     padding: 0;
     list-style-type: none;
     text-decoration: none;
-    font-family: 'Cinzel', serif;
+    font-family: 'Playfair Display', serif;
     --light-color:#EAD1C0;
     --footer-color:#FCF9F8;
 }
@@ -22,15 +22,20 @@ body{
     justify-content: center;
     align-items: center;
     background-color: rgb(251, 249, 249);
+    overflow-x: hidden;
 }
 
-a,p{
+a{
     font-weight: bold;
     color: black;
 }
 
 a:hover{
     cursor: pointer;
+}
+
+a:visited{
+    color: black;
 }
 
 input{
@@ -41,11 +46,30 @@ input{
 }
 
 form input:hover{
+    color: black;
     background-color: #f6f3f2;
     border: solid black 2px;
 }
 
-input:hover , .sub:hover{
+.light-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    border: 2px solid black;
+    transition: 0.2s;
+}
+
+.dark-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    border: 2px solid var(--light-color);
+    transition: 0.2s;
+}
+
+input:hover , .sub:hover, .light-button:hover, .dark-button:hover{
     cursor: pointer;
     background-color: black;
     color: var(--light-color);
@@ -55,6 +79,32 @@ input:hover , .sub:hover{
 textarea{
     border-radius: 10px;
     border: 2px solid black;
+}
+
+.circle-loading{
+    position: fixed;
+    top: 90vh;
+    right:20px;
+    z-index: 5;
+    width: 60px;
+    height: 60px;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 75px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.circle-inside{
+    width: 90%;
+    height: 90%;
+    background-color: var(--light-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 75px;
+    font-size: 30px;
 }
 
 /* Header */
@@ -92,16 +142,34 @@ header{
 }
 
 .logo{
-    width: 25%;
+    width: 50%;
     height: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     margin-left: 0;
+    max-width: 405px;
+}
+
+.logo a{
+    width: 20%;
 }
 
 .logo img{
-    width: 45%;
+    width: 100%;
+    transition: 1s;
+}
+
+.logo img:hover{
+    transform: rotate(-45deg);
+    transition: 1s;
+}
+
+.logo p{
+    width:75%;
+    font-size: 25px;
+    font-weight: bolder;
+    text-transform: uppercase;
 }
 
 .en-tete{
@@ -114,23 +182,75 @@ header{
     text-align: center;
 }
 
+.burger{
+    display: none;
+    width: 30px;
+    height: 20px;
+}
+
+.burger:hover{
+    cursor: pointer;
+}
+
+.burger-line{
+    background-color: black;
+    width: 30px;
+    height: 4px;
+}
+
+.linksNav{
+    display: none;
+}
+
+.nav-resp{
+    display: none;
+}
 
 .nav{
     width: 25%;
+    min-width: 290px;
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.nav a{
-    transition:0.2s;
-    width: 50%;
-    text-align: center;
+.nav-text-bloc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
 }
 
-.nav a:hover{
-    text-decoration: underline;
+.nav-text-bloc > *{
+    width: 100%;
+}
+
+.underline-nav{
+    background-color: black;
+    width: 100%;
+    height: 2px;
+    position: relative;
+    left: -100%;
+    visibility: hidden;
+}
+
+.animation-underline-nav{
+    position: relative;
+    animation: animation-underline-nav 0.2s forwards;
+}
+
+.remove-animation-underline-nav{
+    position: relative;
+    animation: remove-animation-underline-nav 0.2s forwards;
+}
+
+.nav a{
+    transition:0.2s;
+    width: 100%;
+    text-align: center;
+    transition: 1s;
 }
 
 /* main */
@@ -144,6 +264,7 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
 }
 
 /* page header */
@@ -202,11 +323,29 @@ header{
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
+    overflow-y: hidden;
 }
 
+.form-header h2{
+    font-size: 30px;
+    position: relative;
+    top: -100%;
+}
 
 .form-header p{
     width: 50%;
+    position: relative;
+    bottom: -100%;
+}
+
+.animation-form-header{
+    position: relative;
+    animation: animation-form-header 1s forwards;
+}
+
+.animation-form-header-para{
+    position: relative;
+    animation: animation-form-header-para 1s forwards;
 }
 
 .form-container{
@@ -233,6 +372,11 @@ form{
 .champ input{
     width: 150px;
     height: 20px;
+}
+
+.champ input::placeholder{
+    font-style: italic;
+    text-transform: capitalize;
 }
 
 .champ{
@@ -277,6 +421,7 @@ form input{
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
 }
 
 .coord{
@@ -286,6 +431,14 @@ form input{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    position: relative;
+    left: -100%;
+    font-weight: bold;
+}
+
+.animation-coord{
+    position: relative;
+    animation: animation-coord 1s forwards;
 }
 
 .coord-line{
@@ -321,6 +474,14 @@ form input{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    right: -100%;
+    font-weight: bold;
+}
+
+.animation-horaires{
+    position: relative;
+    animation: animation-horaires 1s forwards;
 }
 
 .day{
@@ -346,6 +507,7 @@ form input{
     margin: auto;
     position: absolute;
     top:250px;
+    font-family: 'Cinzel', serif;
 }
 
 /* icon bloc */
@@ -358,15 +520,39 @@ form input{
     height: 350px;
     margin-top: 50px;
     margin-bottom: 50px;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .icons-bloc > div{
     height: 100%;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     max-width: 100px;
+}
+
+.check{
+    position: relative;
+    left: -100%;
+}
+
+.home-protect{
+    position: relative;
+    min-width: 200px;
+    bottom: -100%;
+}
+
+.home-protect ul{
+    font-weight: bolder;
+    text-align: center;
+    font-size: 20px;
+}
+
+.justice{
+    position: relative;
+    right: -100%;
 }
 
 .icons-bloc i{
@@ -380,12 +566,45 @@ form input{
     font-weight: bold;
 }
 
+
+
+.anim-left{
+    position: relative;
+    animation: anim-left 1s forwards;
+}
+
+.remove-anim-left{
+    position: relative;
+    animation: remove-anim-left 1s forwards ;
+}
+
+.anim-up{
+    position: relative;
+    animation: anim-up 1s forwards;
+}
+
+.remove-anim-up{
+    position: relative;
+    animation: remove-anim-up 1s forwards;
+}
+
+.anim-right{
+    position: relative;
+    animation: anim-right 1s forwards;
+}
+
+.remove-anim-right{
+    position: relative;
+    animation: remove-anim-right 2s forwards;
+}
 /* bloc biographie page qui suis je */
 
 .bio{
     width: 100%;
     height: 1000px;
     display: flex;
+    overflow-x: hidden;
+    background-color: #e1d8d3
 }
 
 .biography, .illustration{
@@ -399,16 +618,25 @@ form input{
     justify-content: space-evenly;
     align-items: center;
     background-color: #e1d8d3;
+    position: relative;
+    left: -100%;
+}
+
+.animation-biography{
+    position: relative;
+    animation: animation-biography 2s forwards;
 }
 
 .biography p{
     width: 80%;
+    font-weight: 600;
 }
 
 .illustration{
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-y: hidden;
 }
 
 .bloc-image-bio, .contact-bio{
@@ -422,7 +650,13 @@ form input{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    position: relative;
+    top: -100%;
+}
 
+.animation-bloc-image-bio{
+    position: relative;
+    animation: animation-bloc-image-bio 2s forwards;
 }
 
 .contact-bio{
@@ -433,6 +667,13 @@ form input{
     align-items: center;
     justify-content: space-evenly;
     background-color: var(--light-color);
+    position: relative;
+    bottom: -100%;
+}
+
+.animation-contact-bio{
+    position: relative;
+    animation: animation-contact-bio 2s forwards;
 }
 
 .contact-bio h3{
@@ -443,18 +684,38 @@ form input{
 
 /* ----------------------------------- */
 
-/* bloc contenu 1 */
+/* bloc contenu */
 
 .bloc-contenu{
     width: 80%;
     height: 500px;
-    box-shadow: 2px 4px 4px 4px rgb(132, 132, 132);
+    box-shadow: 6px 20px 50px 4px rgb(132, 132, 132);
     margin-bottom: 50px;
-    border-radius: 20px;
+    border-radius: 0px;
     display: flex;
     justify-content: center;
     overflow-x: hidden;
     overflow-y: hidden;
+}
+
+.bloc-contenu-animation{
+    position: relative;
+    animation: bloc-contenu-animation 2s forwards;
+}
+
+.bloc-contenu-animation2{
+    position: relative;
+    animation: bloc-contenu-animation2 2s forwards; 
+}
+
+.bloc-contenu-1{
+    position: relative;
+    left: -100%;
+}
+
+.bloc-contenu-2{
+    position: relative;
+    right: -100%;
 }
 
 .img-zone-1{
@@ -491,7 +752,7 @@ form input{
 
 .text-zone-container h3{
     width: 100%;
-    font-size: 22px;
+    font-size: 30px;
 }
 
 .text-zone p{
@@ -504,6 +765,7 @@ form input{
     height: 35px;
     font-weight: bold;
     border-radius: 10px;
+    border: solid black 2px;
 }
 
 .light-button{
@@ -623,6 +885,250 @@ footer ul{
     font-weight: lighter;
 }
 
+/* pages info & error */
+.wrapper-info{
+    width: 100%;
+    height: 100vh;
+    background-color: azure;
+    background-image: url(../assets/img/images/droit-juriste-floujpg.webp);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info{
+    width: 50%;
+    height: 50%;
+    border-radius: 15px;
+    background-color: var(--light-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info p, .info a{
+    width: 80%;
+    min-height:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.info a{
+    text-decoration: underline;
+}
+
+/* form admin */
+
+.wrapper-form-admin{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper-form-admin *{
+    margin: auto;
+}
+
+.container-form-admin{
+    width: 550px;
+    height: 291px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-color);
+    border: 2px solid black;
+}
+
+
+.title-admin{
+    width: 80%;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.form-admin{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+    margin: auto;
+}
+
+.line-form-admin{
+    width: 90%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.line-form-admin input{
+    width: 40%;
+    height: 25px;
+}
+
+/* infos demandes */
+
+.admin-input{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.body-alt-list{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: visible;
+    min-height:100vh;
+    background-image: url('../assets/img/images/droit-juriste-floujpg.webp');
+    background-size: cover;
+}
+
+.body-alt-list h2{
+    color: aliceblue;
+}
+
+.disconnect-wrap{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 200px;
+    position: absolute;
+    top:20px;
+}
+
+
+
+.wrap-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contain-demandes-list{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.line-demandes-list{
+    background-color: var(--light-color);
+    width: 100%;
+    height: auto;
+}
+
+.intitules p{
+    color: white;
+}
+
+.line-demandes-list,.intitules{
+    min-height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: visible;
+    border:solid black 1px;
+}
+
+.form-list{
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    min-height: 150px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.form-list p,.div-inv,.intitules p{
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.form-list p{
+    min-height:100px;
+}
+
+.date-list{
+    width: 200px;
+}
+
+.prenom-list,.nom-list,.tel-list{
+    width:150px;
+}
+
+.mail-list,.rs-list{
+    width:250px;
+}
+
+.demande-list{
+    width:500px;
+    max-width: 500px;
+    min-height: 20px;
+    overflow-wrap:anywhere;
+    overflow-y: hidden;
+}
+
+.div-inv{
+    width: 100px;
+    overflow-x: hidden;
+}
+
+.supr{
+    width: 100px;
+    text-align: center;
+}
+
+.valide{
+    width: 25px;
+    height: 25px;
+    margin-right: 2px;
+    background-color: rgb(7, 7, 7);
+    border-color: white;
+    color: aliceblue;
+    border-radius: 25px;
+}
+
+.valide:hover{
+    background-color: firebrick;
+    border-color: white;
+    color: aliceblue;
+}
+
+.input-inv{
+    width: 0px;
+    height:0px;
+    visibility: hidden;
+}
+
 /* media queries */
 
 @media screen and (min-width : 1300px){
@@ -631,6 +1137,12 @@ footer ul{
     }
     .header-title{
         top:300px;
+    }
+}
+
+@media screen and (max-width:1650px){
+    .body-alt-list{
+        width: 1650px;
     }
 }
 
@@ -662,6 +1174,7 @@ footer ul{
         align-items: center;
     }
 
+
     .text-zone{
         width: 100%;
         height: 50%;
@@ -681,6 +1194,26 @@ footer ul{
         justify-content: center;
         align-items: center;
     }
+
+    .bloc-contenu-1{
+        left: 0;
+    }
+
+    .bloc-contenu-2{
+        right: 0;
+    }
+
+    .bloc-contenu-animation{
+        animation: none;
+    }
+
+    .bloc-contenu-animation2{
+        animation: none;
+    }
+
+    .circle-loading{
+        visibility: hidden;
+    };
 
     form{
         flex-direction: column;
@@ -729,13 +1262,12 @@ footer ul{
         margin-top: 45px;
     }
 
-    .hours{
-    }
-
     .coord-line{
         width: 250px;
         justify-content: space-evenly;
     }
+
+
     
 }
 
@@ -745,9 +1277,8 @@ footer ul{
         width: 40%;
     }
 
-    h1{
-        text-align: center;
-        font-size: 25px;
+    .logo p{
+        display: none;
     }
     .main-header{
         width: 90%;
@@ -784,12 +1315,24 @@ footer ul{
     }
 
     .contact-bio h3{
-        font-size: 25px;
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width:500px){
+    .line-form-admin{
+        width: 70%;
+    }
+    .line-form-admin label{
+        margin-left: 15px;
+    }
+    .line-form-admin input{
+        margin-right: 15px;
     }
 }
 
 @media screen and (max-width:500px){
-    h1{
+    .logo p{
         font-size: 20px;
     }
 
@@ -797,8 +1340,99 @@ footer ul{
         width: 35%;
     }
     .nav{
-        width: 35%;
+        /* width: 35%; */
+        display: none;
     }
+
+    .burger{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .nav-resp{
+        background-color: var(--light-color);
+        width: 100%;
+        /* height:100px; */
+        height: 0px;
+        position: fixed;
+        top: 100px;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 5;
+        box-shadow: 0px 2px 2px 0px black;
+    }
+
+    .burger-line{
+        position: relative;
+        transition: 0.5s;
+    }
+
+    
+
+    .nav-resp-animate{
+        animation: nav-resp-animate 0.2s forwards;
+    }
+
+    .nav-resp-hide{
+        animation: nav-resp-hide 0.2s forwards;
+    }
+
+    .nav-text-bloc{
+        display: flex;
+        height: 30px;
+    }
+
+
+    .nav-text-bloc a{
+        font-size: 20px;
+    }
+
+    .linksNav{
+        display: none;
+    }
+
+    .underline-nav{
+        background-color: var(--light-color);
+        color: black;
+    }
+
+    .wrapper-form-admin{
+        height: 100vh;
+        background-color: var(--light-color);
+    }
+
+    .container-form-admin{
+        width: 100%;
+        height: 100vh;
+        border-radius: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: var(--light-color);
+        border: 0px solid black;
+    }
+
+    .form-admin{
+        margin-bottom: 30vh;
+    }
+
+    .title-admin{
+        height:80px;
+    }
+
+    .line-form-admin{
+        flex-direction: column;
+    }
+
+    .line-form-admin input{
+        width: 80%;
+    }
+
 }
 
 @media screen and (max-width : 450px){
@@ -815,13 +1449,14 @@ footer ul{
         display: none;
     }
 
-    h1{
+    .logo p{
         display: none;
     }
 
     .nav{
-        width: 60%;
-        max-width: 150px;
+        width: 80%;
+        
+        min-width: 200px;
     }
 
     .icons-bloc{
@@ -985,9 +1620,6 @@ footer ul{
         font-size: 15px;
     }
 
-    .coord-contain{
-    }
-
     .coord{
         width: 100%;
     }
@@ -1039,10 +1671,12 @@ footer ul{
 }
 
 @media screen and (max-height : 850px){
-    .header-main h2, .header-main-2 h2{
+    .header-main h1, .header-main-2 h1{
         top:35%;
     }
 }
+
+/* header bckgd color animation */
 
 @keyframes colorChangeIndex{
     0%{background-color: var(--footer-color);}
@@ -1053,3 +1687,102 @@ footer ul{
     0%{background-color: var(--light-color);}
     100%{background-color: var(--footer-color);}
 }
+
+/* icons index animation */
+
+@keyframes anim-left{
+    0%{left: -100%;}
+    100%{left:0%;}
+}
+
+@keyframes remove-anim-left{
+    0%{left: 0%;}
+    100%{left:-100%;}
+}
+
+@keyframes anim-up{
+    0%{bottom: -100%;}
+    100%{bottom:0%;}
+}
+
+@keyframes remove-anim-up{
+    0%{bottom: 0%;}
+    100%{bottom:-100%;}
+}
+
+@keyframes anim-right{
+    0%{right: -100%;}
+    100%{right:0%;}
+}
+
+@keyframes remove-anim-right{
+    0%{right: 0%;}
+    100%{right:-100%;}
+}
+
+@keyframes bloc-contenu-animation{
+    100%{transform: translateX(125%);}
+}
+
+@keyframes bloc-contenu-animation2{
+    100%{transform: translateX(-125%);}
+}
+
+@keyframes animation-biography{
+    0%{left: -100%;}
+    100%{left:0%;}
+}
+
+@keyframes animation-bloc-image-bio{
+    0%{top: -100%;}
+    100%{top:0%;}
+}
+
+@keyframes animation-contact-bio{
+    0%{bottom: -100%;}
+    100%{bottom:0%;}
+}
+
+@keyframes animation-form-header{
+    0%{top: -100%;}
+    100%{top:0%;}
+}
+
+@keyframes animation-form-header-para{
+    0%{bottom: -100%;}
+    100%{bottom:0%;}
+}
+
+@keyframes animation-coord{
+    0%{left: -100%;}
+    100%{left:0%;}
+}
+
+@keyframes animation-horaires{
+    0%{right: -100%;}
+    100%{right:0%;}
+}
+
+@keyframes animation-underline-nav{
+    0%{left: -100%;}
+    100%{left:0%;}
+}
+
+@keyframes remove-animation-underline-nav{
+    0%{left: 0%;}
+    100%{left:-100%;}
+}
+
+@keyframes nav-resp-animate{
+    0%{height: 0px;}
+    100%{height:100px;}
+}
+
+@keyframes nav-resp-hide{
+    0%{height: 100px;}
+    100%{height:0px;}
+}
+
+
+
+
