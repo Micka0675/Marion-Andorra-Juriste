@@ -7,47 +7,69 @@
     <link rel="shortcut icon" type="image/png" href="../assets/img/Logo/PNG/Logo_Marion_initiale.png"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/style.css" type="text/css">
-    <title>Document</title>
+    <title>Marrion Andorra - Contact</title>
 </head>
 <body>
     <header>
         <div class="main-header">
             <div class="logo">
-                <a href="../index.html"><img src="../assets/img/Logo/PNG/Logo_Marion_noir.png" alt="Marion Andorra Juriste"></a>
-            </div>
-            <div class="en-tete">
-                <h1>Marion Andorra</h1>
-                <p>~ Conseils Juridiques ~</p>
+                <a href="../index.php"><img src="../assets/img/Logo/PNG/Logo_Marion_noir.png" alt="Marion Andorra Juriste"></a>
+                <p>Marion Andorra</p>
             </div>
             <div class="nav">
-                <a href="../index.html">Accueil</a>
-                <a href="./Qui-suis-je.html">Qui Suis-Je</a>
+                <div class="nav-text-bloc">
+                    <a id ="linkNav1" href="../index.php">Accueil</a>
+                    <div class="underline-nav" id="underNav"></div>
+                </div>
+                <div class="nav-text-bloc">
+                    <a id ="linkNav2" href="./Qui-suis-je.php">Qui Suis-Je</a>
+                    <div class="underline-nav" id="underNav2"></div>
+                </div>
+                <div class="nav-text-bloc">
+                    <a id ="linkNav3" href="./contact.php">Contact</a>
+                    <div class="underline-nav" id="underNav3"></div>
+                </div>
+            </div>
+            <div class="burger" id="burger">
+                <div class="burger-line"></div>
+                <div class="burger-line" id="middleLine"></div>
+                <div class="burger-line"></div>
             </div>
         </div>
     </header>
+    <div class="nav-resp" id="navMenu">
+        <div class="nav-text-bloc"><a class="linksNav" href="../index.php">Accueil</a><div class="underline-nav" ></div></div>
+        <div class="nav-text-bloc"><a class="linksNav" href="./Qui-suis-je.php">Qui Suis-Je</a><div class="underline-nav" ></div></div>
+        <div class="nav-text-bloc"><a class="linksNav" href="./contact.php">Contact</a><div class="underline-nav" ></div></div>
+    </div>
     <div class="main">
         <div class="header-main-3" id="headerContact">
             <div class="mask-header"></div>
-            <h2 class="header-title">Contact</h2>
+            <h1 class="header-title">Contact</h1>
         </div>
     </div>
+    <div class="circle-loading" id="progress">
+            <div class="circle-inside" id="progress-value">
+                <i class="fa-solid fa-arrow-down"></i>
+            </div>
+    </div>
     <div class="form-header">
-        <h2>Vous souhaitez en savoir plus?</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam leo vitae quam tempor dapibus. Morbi volutpat pretium velit eget aliquam.</p>
+        <h2 id="titleAnim" class="up-title">Vous souhaitez en savoir plus?</h2>
+        <p id="paragAnim" class="down-parag">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam leo vitae quam tempor dapibus. Morbi volutpat pretium velit eget aliquam.</p>
     </div>
     <div class="form-container">
-        <form action="" method="">
-            <div class="champ"><label for="Nom">Nom</label><input id="Nom" type="text"></div>
-            <div class="champ"><label for="Prenom">Prénom</label><input id="Prenom" type="text"></div>
-            <div class="champ"><label for="Mail">Mail</label><input id="Mail" type="text"></div>
-            <div class="champ"><label for="RaisonSociale">Raison Sociale</label><input id ="RaisonSociale" type="text"></div>
-            <div class="champ telephone"><label for="Telephone">Tél.</label><input id="Telephone" type="text"></div>
-            <div class="champ demande"><label for="Demande">Votre Demande</label><textarea name="" id="Demande" cols="30" rows="10"></textarea></div>
+        <form action="./check.php" method="post">
+            <div class="champ"><label for="Nom">Nom</label><input id="Nom" type="text" name="nom" required maxlength="50"></div>
+            <div class="champ"><label for="Prenom">Prénom</label><input id="Prenom" type="text" name="prenom" required maxlength="50"></div>
+            <div class="champ"><label for="Mail">Mail</label><input id="Mail" type="email" name="mail" required maxlength="50"></div>
+            <div class="champ"><label for="RaisonSociale">Raison Sociale</label><input id ="RaisonSociale" type="text" name="rs" placeholder="(facultatif)"></div>
+            <div class="champ telephone"><label for="Telephone">Tél.</label><input id="Telephone" name="phone" type="tel" placeholder="(facultatif)" maxlength="10"></div>
+            <div class="champ demande"><label for="Demande">Votre Demande (En quelques phrases)</label><textarea name="demande" id="Demande" cols="30" rows="10" maxlength="1000"></textarea></div>
             <input class="sub" type="submit">
         </form>
     </div>
     <div class="coord-contain">
-        <div class="coord">
+        <div class="coord" id="coord">
             <div class="coord-line">
                 <i class="fa-solid fa-phone"></i>
                 <p>01.75.19.70.92</p>
@@ -62,7 +84,7 @@
             </div>
         </div>
         <div class="separation"></div>
-        <div class="horaires">
+        <div class="horaires" id="horaires">
             <div class="day">
                 <p>Lundi</p>
                 <div class="hours">
@@ -110,8 +132,8 @@
                 </ul>
             </div>
             <div class="nav-footer">
-                <a href="../index.html">Accueil</a>
-                <a href="./Qui-suis-je.html">Qui Suis-Je</a>
+                <a href="../index.php">Accueil</a>
+                <a href="./Qui-suis-je.php">Qui Suis-Je</a>
                 <a href="#headerContact">Contact</a>
             </div>
             <div class="social">
@@ -121,8 +143,9 @@
             </div>
         </div>
         <div class="dev-part">
-            <p>Design & Build By <a href="https://mickael-rouge-web-dev.go.yo.fr/">Mickael Rougé</a></p>
+            <p>Design & Build By <a href="https://mickael-rouge-web-dev.go.yo.fr/">Mickael Rougé</a> ,2022.</p>
         </div>
     </footer>
+    <script src="../js/script.js"></script>
 </body>
 </html>
