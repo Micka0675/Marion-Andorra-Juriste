@@ -73,18 +73,24 @@ document.addEventListener('scroll', function()
 
   // progress circle
 
-  if(check != null && homeProtect != null && justice != null){
+  if(check != null && homeProtect != null && justice != null && scrollProgress != null)
+  {
     let pos = document.documentElement.scrollTop;
     let calcHeight = document.documentElement.clientHeight + 300;
     let scrollValue = Math.round( pos * 100 / calcHeight);
     scrollProgress.style.background = 'conic-gradient(black '+scrollValue+'%, grey '+scrollValue+'%)';
   }
-  else{
-    let pos = document.documentElement.scrollTop;
-    let calcHeight = document.documentElement.clientHeight - 200;
-    let scrollValue = Math.round( pos * 100 / calcHeight);
-    scrollProgress.style.background = 'conic-gradient(black '+scrollValue+'%, grey '+scrollValue+'%)';
-  }
+  else
+    if(scrollProgress != null){
+      let pos = document.documentElement.scrollTop;
+      let calcHeight = document.documentElement.clientHeight - 200;
+      let scrollValue = Math.round( pos * 100 / calcHeight);
+      scrollProgress.style.background = 'conic-gradient(black '+scrollValue+'%, grey '+scrollValue+'%)';
+    }
+    else{
+      scrollProgress = null;
+}
+
   
 
   if(window.scrollY >0)
