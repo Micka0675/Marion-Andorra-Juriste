@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="./assets/img/Logo/PNG/Logo_Marion_initiale.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <title>Marion Andorra, conseils juridiques</title>
+</head>
+<body>
+    <header class="index-header">
+        <div class="main-header">
+            <div class="logo">
+                <a href="./index.php"><img src="./assets/img/Logo/PNG/Logo_Marion_noir.png" alt="Marion Andorra Juriste"></a>
+                <p>Marion Andorra</p>
+            </div>
+            <div class="nav">
+                <div class="nav-text-bloc"><a id ="linkNav1" href="./index.php">Accueil</a><div class="underline-nav" id="underNav"></div></div>
+                <div class="nav-text-bloc"><a id ="linkNav2" href="./pages/Qui-suis-je.php">Qui Suis-Je</a><div class="underline-nav" id="underNav2"></div></div>
+                <div class="nav-text-bloc"><a id ="linkNav3" href="./pages/contact.php">Contact</a><div class="underline-nav" id="underNav3"></div></div>
+            </div>
+            <div class="burger" id="burger">
+                <div class="burger-line"></div>
+                <div class="burger-line" id="middleLine"></div>
+                <div class="burger-line"></div>
+            </div>
+        </div>
+    </header>
+    <div class="nav-resp" id="navMenu">
+        <div class="nav-text-bloc"><a class="linksNav" href="./index.php">Accueil</a><div class="underline-nav"></div></div>
+        <div class="nav-text-bloc"><a class="linksNav" href="./pages/Qui-suis-je.php">Qui Suis-Je</a><div class="underline-nav"></div></div>
+        <div class="nav-text-bloc"><a class="linksNav" href="./pages/contact.php">Contact</a><div class="underline-nav"></div></div>
+    </div>
+    <div class="main" id="headerHome">
+        <div class="header-main">
+            <div class="mask-header"></div>
+            <h1 class="header-title">Votre Specialiste Juridique à Paris</h1>
+        </div>
+        <div class="circle-loading" id="progress">
+            <div class="circle-inside" id="progress-value">
+                <i class="fa-solid fa-arrow-down"></i>
+            </div>
+        </div>
+        <p class="introduction">
+            Le droit des affaires régit l’ensemble de nos rapports commerciaux en tant que professionnels ainsi qu’en tant que particuliers.  
+        </p>
+        <p class="introduction2">
+            Ce droit est présent dans l’ensemble de nos échanges. 
+            Celui-ci est assez éparse, complexe et il est parfois compliqué de s’y retrouver,
+            ou encore de savoir quels sont nos droits dans certaines situations,
+            lesquels peuvent s'appliquer en fonction de chaque profil de personne.
+        </p>
+        <p class="introduction3">
+            C’est pour cela, que j’ai créé MA Conseil Juridique. 
+            Afin d’aider au mieux les personnes, professionnels, particuliers, à connaitre leurs droits 
+            et à veiller au mieux à ce que ceux-ci soient respectés en fonction de chaque profil. 
+        </p>
+        <div class="icons-bloc">
+            <div class="check" id="check">
+                <i class="fa-solid fa-list-check"></i>
+                <p>Suivi Personnalisé</p>
+            </div>
+            <div class="home-protect" id="homeProtect">
+                <i class="fa-sharp fa-solid fa-briefcase"></i>
+                <ul>
+                    <li>Droit commercial </li>
+                    <li>Droit des sociétés</li>
+                    <li>Droit des assurances </li>
+                </ul>
+            </div>
+            <div class="justice" id="justice">
+                <i class="fa-solid fa-desktop"></i>
+                <p>Consultation à distance</p>
+            </div>
+        </div>
+        <div class="bloc-contenu-1 bloc-contenu">
+            <div class="img-zone img-zone-1"></div>
+            <div class="text-zone">
+                <div class="text-zone-container">
+                    <h2>Juriste en Droit des affaires </h2>
+                    <p class="space-para">Je vous conseille dans plusieurs domaines tels que:</p>
+                    <ul>
+                        <li class="space-list"><strong>Le Droit commercial</strong>, matière réglementant les activités du commerçant et le régime juridique relatif aux actes de commerce.</li>
+                        <li class="space-list"><strong>Le Droit des sociétés</strong>, prévoyant les règles relatives à la vie des sociétés.</li>
+                        <li class="space-list"><strong>Le Droit des biens</strong>, s’ appliquant au sort des biens ou des choses. Il réglemente les rapports entre les personnes et les biens.</li>
+                        <li class="last-elem"><strong>Le Droit des assurances</strong>, qui régit les rapports entre les assureurs et les assurés dans le cadre d’un contrat d’assurance. Ces relations sont basées sur les garanties offertes à l’assuré lors de la conclusion de son contrat d’assurance. </li>
+                    </ul>
+                    <a href="./pages/Qui-suis-je.php"><div class="dark-button">En Savoir Plus</div></a>
+                </div>
+            </div>
+        </div>
+        <div class="bloc-contenu-2 bloc-contenu">
+            <div class="text-zone">
+            <div class="text-zone-container text-zone-container-2">
+                <h2>Consultez sans vous déplacer.</h2>
+                <p>
+                    De nos jours, il est difficile de trouver le temps d’intégrer des rendez-vous en présentiel à des horaires qui nous conviennent. C’est pour faciliter cela et répondre au plus vite à votre problématique afin de préserver vos droits, que l’ensemble de mes consultations se font uniquement à distance en visioconférence du lundi au samedi.  
+                </p>
+                <p>
+                    Pour cela, je suis ravie de vous recevoir en consultation à distance afin de vous fournir une expertise totalement personnalisée à votre problématique et à votre profil.  
+                </p>
+                <a href="./pages/contact.php"><div class="light-button">Demander Conseil</div></a>
+            </div>
+            </div>
+            <div class="img-zone img-zone-2"></div>
+        </div>
+    </div>
+    <footer class="foot-index">
+        <div class="main-footer">
+            <div class="adress">
+                <ul>
+                    <li>24 Rue Du Commandant Guibaud, 75016 Paris</li>
+                    <li>06.74.86.15.50 </li>
+                    <li><a href="mailto:ma.conseiljuridique@gmail.com">ma.conseiljuridique@gmail.com</a></li>
+                </ul>
+            </div>
+            <div class="nav-footer">
+                <a href="#headerHome">Accueil</a>
+                <a href="./pages/Qui-suis-je.php">Qui Suis-Je</a>
+                <a href="./pages/contact.php">Contact</a>
+            </div>
+            <div class="social">
+                <div class="social-icons">
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    <a href=""><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+                </div>
+                <div class="links-mentions">
+                    <a href="./pages/mentions.php"><p>Mentions Légales</p></a>
+                    <a href="./pages/honoraires.php"><p>Honoraires</p></a>
+                </div>
+            </div>
+        </div>
+        <div class="dev-part">
+            <p>Design & Build By <a href="https://mickael-rouge-web-dev.go.yo.fr/">Mickael Rougé</a>, 2022.</p>
+        </div>
+    </footer>
+    <script src ="./js/script.js"></script>
+</body>
+</html>
